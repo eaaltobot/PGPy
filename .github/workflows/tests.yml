@@ -1,32 +1,6 @@
 name: Tox Tests
 on: [push, pull_request]
 jobs:
-  unit-tests:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-18.04, macos-10.15]
-        python-version: [3.6, 3.7, 3.8, 3.9, '3.10']
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install requirements
-        run: |
-          sed -i -e 's/^/#/' tests/gnupghome/gpg-agent.conf
-          if [ "$(uname)" = "Darwin" ]; then ./install_dependencies.osx.sh; else ./install_dependencies.linux.sh; fi
-          pip install tox coveralls
-      - name: Run Tox
-        run: ./tox.sh -e py
-      - name: Upload Coveralls coverage
-        if: ${{ success() }}
-        run: coveralls --service=github
-        env:
-          COVERALLS_PARALLEL: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   py3_13unit-tests:
     runs-on: ${{ matrix.os }}
@@ -124,7 +98,7 @@ jobs:
 
   # report coverage to coveralls, but only for pytest runs
   finish-coveralls:
-    needs: [ unit-tests, c-locale-test ]
+    needs: [ py3_13unit-tests, c-locale-test ]
     runs-on: ubuntu-18.04
 
     steps:
