@@ -300,7 +300,8 @@ class TestPGPKey(object):
 
     @pytest.mark.parametrize('key_alg_rsa_depr', key_algs_rsa_depr, ids=[alg.name for alg in key_algs_rsa_depr])
     def test_new_key_deprecated_rsa_alg(self, key_alg_rsa_depr, recwarn):
-        k = PGPKey.new(key_alg_rsa_depr, 512)
+        with pytest.raises(ValueError):
+            k = PGPKey.new(key_alg_rsa_depr, 512)
 
         w = recwarn.pop()
         assert str(w.message) == '{:s} is deprecated - generating key using RSAEncryptOrSign'.format(key_alg_rsa_depr.name)
