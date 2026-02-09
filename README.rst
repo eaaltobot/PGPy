@@ -1,4 +1,4 @@
-PGPy: Pretty Good Privacy for Python
+PGPym: Pretty Good Privacy for Python
 ====================================
 
 .. image:: https://badge.fury.io/py/PGPy.svg
@@ -17,7 +17,8 @@ PGPy: Pretty Good Privacy for Python
     :target: https://pgpy.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
-`PGPy` is a Python library for implementing Pretty Good Privacy into Python programs, conforming to the OpenPGP specification per RFC 4880.
+`PGPym` is a hopefully temporary fork of `PGPy` with additional maintenance fixes.
+`PGPy` is Python library for implementing Pretty Good Privacy into Python programs, conforming to the OpenPGP specification per RFC 4880.
 
 Features
 --------
@@ -29,11 +30,11 @@ It can create and verify RSA, DSA, and ECDSA signatures, at the moment. It can a
 Installation
 ------------
 
-To install PGPy, simply:
+To install PGPym, simply:
 
 .. code-block:: bash
 
-    $ pip install PGPy
+    $ pip install PGPym
 
 Documentation
 -------------
@@ -43,7 +44,7 @@ Documentation
 Discussion
 ----------
 
-Please report any bugs found on the `issue tracker <https://github.com/SecurityInnovation/PGPy/issues>`_
+Please report any bugs found on the `issue tracker <https://github.com/eaaltonen/PGPy/issues>`_
 
 You can also join ``#pgpy`` on Freenode to ask questions or get involved
 
