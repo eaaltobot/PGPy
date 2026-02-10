@@ -1,0 +1,28 @@
+name: Build distribution wheel
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-wheel-and-hash:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+
+      - name: Upgrade pip and install build
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install build
+
+      - name: Build wheel
+        run: |
+          python -m build --wheel --outdir dist
+
+      - name: Calculate SHA256 of wheel
+        run: sha256sum dist/*.whl
