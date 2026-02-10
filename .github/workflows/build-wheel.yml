@@ -7,6 +7,9 @@ jobs:
   build-wheel-and-hash:
     runs-on: ubuntu-24.04
     steps:
+      - name: Print current user
+        run: id -u
+
       - name: Set umask
         run: umask 0002
 
