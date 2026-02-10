@@ -10,6 +10,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Read SOURCE_DATE_EPOCH from file and export
+        run: echo "SOURCE_DATE_EPOCH=$(cat source_date_epoch)" >> $GITHUB_ENV
+
       - name: Set up Python 3.12
         uses: actions/setup-python@v4
         with:
@@ -22,6 +25,8 @@ jobs:
 
       - name: Build wheel
         run: |
+          export SOURCE_DATE_EPOCH
+          umask 0002
           python -m build --wheel --outdir dist
 
       - name: Calculate SHA256 of wheel
