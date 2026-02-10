@@ -32,7 +32,7 @@ jobs:
       - name: Build wheel
         run: |
           export SOURCE_DATE_EPOCH
-          python -m build --wheel --outdir dist
+          fakeroot python -m build --wheel --outdir dist
 
       - name: Calculate SHA256 of wheel
         run: sha256sum dist/*.whl
