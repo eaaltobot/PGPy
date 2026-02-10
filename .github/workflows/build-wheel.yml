@@ -7,6 +7,9 @@ jobs:
   build-wheel-and-hash:
     runs-on: ubuntu-24.04
     steps:
+      - name: Set umask
+        run: umask 0002
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -26,7 +29,6 @@ jobs:
       - name: Build wheel
         run: |
           export SOURCE_DATE_EPOCH
-          umask 0002
           python -m build --wheel --outdir dist
 
       - name: Calculate SHA256 of wheel
