@@ -1,5 +1,5 @@
 PGPym: Pretty Good Privacy for Python
-====================================
+=====================================
 
 .. image:: https://badge.fury.io/py/PGPy.svg
     :target: https://badge.fury.io/py/PGPy
