@@ -1,3 +1,54 @@
+[project]
+name = "PGPym"
+version = "0.6.0"
+description = "Pretty Good Privacy for Python"
+authors = [
+  {name = "Michael Greene", email = "mgreene@securityinnovation.com"}
+]
+maintainers = [
+  {name = "Eero Aaltonen", email = "eero.aaltonen@iki.fi"}
+]
+license = "BSD-3-Clause"
+keywords = ["OpenPGP", "PGP", "Pretty Good Privacy", "GPG", "GnuPG", "openpgp", "pgp", "gnupg", "gpg",
+  "encryption", "signature"]
+requires-python = ">= 3.6"
+dependencies = [
+  "cryptography>=3.3.2",
+  "pyasn1"
+]
+readme = "README.rst"
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Operating System :: POSIX :: Linux",
+  "Operating System :: MacOS :: MacOS X",
+  "Operating System :: Microsoft :: Windows",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.6",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Topic :: Security",
+  "Topic :: Security :: Cryptography",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://github.com/eaaltobot/PGPy"
+Documentation = "https://pgpy.readthedocs.io/en/latest/"
+Repository = "https://github.com/eaaltobot/PGPy.git"
+Issues = "https://github.com/eaaltonen/PGPy/issues"
+Changelog = "https://github.com/eaaltobot/PGPy/blob/master/docs/source/changelog.rst"
+
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
