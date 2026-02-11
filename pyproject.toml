@@ -1,6 +1,6 @@
 [project]
 name = "PGPym"
-version = "0.6.0"
+version = "0.6.1"
 description = "Pretty Good Privacy for Python"
 authors = [
   {name = "Michael Greene", email = "mgreene@securityinnovation.com"}

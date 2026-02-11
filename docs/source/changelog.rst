@@ -4,6 +4,18 @@
 Changelog
 *********
 
+v0.6.1
+======
+
+Released: Feb 11, 2026
+
+.. note::
+
+Bugs Fixed
+----------
+* now compatible with Python versions >= 3.13
+* works with Cryptography >= 43.0.0
+
 v0.6.0
 ======
 
